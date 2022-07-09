@@ -1,11 +1,11 @@
 import argparse
-import logging
+import logging as log
 import os
 
 
 from git_chat.client import ChatClient
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+log.basicConfig(level=log.INFO, format="%(levelname)s: %(message)s")
 
 
 def directory_arg(path: str) -> str:
@@ -26,8 +26,8 @@ def main() -> None:
     try:
         chat_client = ChatClient(args.repository)
         chat_client.run()
-    except KeyboardInterrupt:
-        logging.info("Keyboard interrupt: quitting")
+    except (KeyboardInterrupt, EOFError):
+        log.warning("Keyboard interrupt or error: quitting")
 
 
 if __name__ == "__main__":
