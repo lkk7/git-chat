@@ -1,0 +1,23 @@
+[tool.poetry]
+authors = ["lkk7 <lukaszlapinski7@gmail.com>"]
+description = "A git-based chat"
+license = "MIT"
+name = "git-chat"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+pygit2 = "^1.9.2"
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+flake8 = "^4.0.1"
+flake8-annotations = "^2.9.0"
+flake8-bandit = "^3.0.0"
+flake8-bugbear = "^22.7.1"
+flake8-import-order = "^0.18.1"
+mypy = "^0.961"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
