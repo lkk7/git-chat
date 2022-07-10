@@ -9,6 +9,7 @@ log.basicConfig(level=log.INFO, format="%(levelname)s: %(message)s")
 
 
 def directory_arg(path: str) -> str:
+    """Verify a given path and return it if it's valid."""
     if os.path.isdir(path):
         return path
     else:
